@@ -1,0 +1,25 @@
+
+
+.main-text{
+	font-size: 26px;
+	padding:5px;
+	text-align: center;
+	
+}
+
+.sub-text{
+	font-size: 20px;
+	text-align: center;
+	margin-top: 10px;
+
+}
+
+th{
+	font-style: bold;
+	text-align: center;
+}
+
+.form-control{
+	color:black;
+}
+
