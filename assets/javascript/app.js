@@ -1,4 +1,4 @@
-// Initialize Firebase
+//1. Initialize Firebase
   var config = {
     apiKey: "AIzaSyBsAxfQKN185H7HafPVWmj7FBMj-1Z3F8U",
     authDomain: "trainschedule-6b07c.firebaseapp.com",
@@ -70,36 +70,16 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log(trainTime);
   console.log(trainMinutes);
 
-  //prettify the train start
-  //time stored in unix and then formatted
-
-  var trainTimePretty = moment.unix(trainTime).format("HH:mm:A");
-  // console.log(trainTimePretty);
-
-  var nextArrival = moment().diff(moment.unix(trainTime, "X"), "time");
-  console.log(nextArrival);
-
-  // Calculate the months worked using hardcore math
-  // To calculate the months worked??
-
-  // Calculate when the next train will arrive
-
-  //assumptions  //do I need?
-  // var tFrequency = 15;
-
-  //time is 3:30 AM //do I need?
-  // var firstTime = "02:30";
-
   //first time (pushed back 1 hr to make sure it comes before current time)
   var firstTimeConverted = moment(trainTime, "HH:mm").subtract(1, "years");
 
   //current time
   var currentTime = moment();
-  console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm:"));
+  console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
   //difference b/w times
- var diffTime = moment().diff(moment(firstTimeConverted), "HH:mm");
-    console.log("DIFFERENCE IN TIME: " + diffTime);
+  var diffTime = moment().diff(moment(firstTimeConverted), "HH:mm");
+  console.log("DIFFERENCE IN TIME: " + diffTime);
 
   //time apart(remainder)
 
@@ -115,10 +95,8 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   //Next train
 
   var nextTrain = moment(moment().add(tMinutesTillTrain, "minutes")).format("HH:mm");
-  // var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-
-  console.log("Arrival time: " + moment(nextTrain).format("HH:mm"));
-  // $("#next-input").append(moment(nextTrain).format("HH:mm"));
+  console.log("Arrival time: " + nextTrain);
+ 
 
   //add each train's data into the table
   $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +

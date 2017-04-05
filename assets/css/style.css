@@ -1,25 +1,39 @@
+.Jumbotron{
+	background-color: green;
+	
+	color: white;
+	margin: 5px;
+}
 
-
-.main-text{
+.text-center{
 	font-size: 26px;
 	padding:5px;
-	text-align: center;
-	
+	margin-top: 15px;
+			
+	}
+
+.small{
+	margin: 10px;
+	padding: 10px, 30px;
+	width: 200px;
+	height: 100px;
 }
 
-.sub-text{
-	font-size: 20px;
-	text-align: center;
-	margin-top: 10px;
-
+@media screen and (max-width: 980px){
+  body{
+  	background-color: orange;
+  }
 }
 
-th{
-	font-style: bold;
-	text-align: center;
+@media screen and (max-width: 768px){
+  body {
+  background-color: purple;
 }
-
-.form-control{
-	color:black;
+  
+}
+@media screen and (max-width: 640px){
+	body{
+		background-color: yellow;
+	}
 }
 
