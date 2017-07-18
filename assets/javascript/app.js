@@ -14,7 +14,7 @@
   // 2. Button for adding Trains
 $("#add-train-btn").on("click", function(event) {
   event.preventDefault();
-
+  
   	//grabs user input
   	var trainName = $("#train-name-input").val().trim();
   	var trainDestination = $("#destination-input").val().trim();
